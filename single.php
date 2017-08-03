@@ -14,7 +14,7 @@
             <?php the_content(); ?>
             <hr>
             <?php if( comments_open()){
-              comments_template();
+                      comments_template();
             } else {
               echo '<h5 class="text-center">Sorry, Comments are Closed</h5>';
             }
