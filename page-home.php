@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="row">
-
+  <div class="col-xx-12">
     <div id="ashraf-carousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <!-- <ol class="carousel-indicators">
@@ -18,6 +18,7 @@
 
             $categories = get_categories($arg_cat);
             $count = 0;
+            $bullets = '';
             // var_dump($categories);
             foreach ($categories as $category):
               $arg = array(
@@ -34,20 +35,27 @@
                     <?php //get_template_part('content', 'featured'); ?>
                   </div> -->
                   <div class="item <?php if($count == 0): echo 'active'; endif; ?>">
-                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <?php the_post_thumbnail('full'); ?>
                     <div class="carousel-caption">
                       <?php the_title( sprintf('<h1 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
-                      <small><?php the_category(); ?></small>
+                      <small><?php the_category(' '); ?></small>
                     </div>
                   </div>
 
-                  <?php $count++; endwhile;
+                  <?php $bullets .= '<li data-target="#ashraf-carousel" data-slide-to="'.$count.'" class="'; ?>
+                  <?php if($count == 0): $bullets .= 'active'; endif; ?>
+                  <?php $bullets .= '"></li>'; ?>
+
+                  <?php endwhile;
                 endif;
                 wp_reset_postdata();
                 $count++;
             endforeach;
         ?>
-
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <?php echo $bullets ?>
+        </ol>
 
 
       </div>
@@ -62,7 +70,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-</div><hr>
+  </div>
+</div>
 <div class="row">
 	<div class="col-xs-12 col-sm-8">
     <?php

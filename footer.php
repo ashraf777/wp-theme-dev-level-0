@@ -1,6 +1,7 @@
 
 		<footer>
 			<p>This is the footer of the theme</p>
+			<hr>
 			<div class="row">
 				<div clss="col-xs-12">
 					<nav class="navbar navbar-default">

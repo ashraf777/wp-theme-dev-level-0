@@ -1,0 +1,8 @@
+/*.carousel-indicators .active, .carousel-indicators li  { background: #000; }*/
+.carousel .item { height: 350px; overflow: hidden; }
+.carousel .item img { width: 100%; height: auto; margin-top: -15%;}
+.carousel-caption a { color: #fff; }
+.blog-element { display: block; height: 200px; overflow: hidden; background-position: center center; background-repeat:  no-repeat; background-size: cover;}
+.blog-element a { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.second-row-padding { padding-right: 0; padding-left: 0; }
+.third-row-padding { padding: 0;}

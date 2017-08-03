@@ -38,6 +38,11 @@
 											)
 										);
 									?>
+									<div class="navbar-form navbar-right">
+											<div class="form-group">
+												<?php get_search_form(); ?>
+											</div>
+									</div>
 					    </div><!-- /.navbar-collapse -->
 					  </div><!-- /.container-fluid -->
 					</nav>
