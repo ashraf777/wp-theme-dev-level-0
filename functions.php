@@ -20,7 +20,7 @@ function ashraf_theme_setup(){
 }
 
 add_action('init', 'ashraf_theme_setup');
-
+// theme support
 add_theme_support('custom-background');
 add_theme_support('custom-header');
 add_theme_support('post-thumbnails');
@@ -43,3 +43,6 @@ function ashraf_widget_setup(){
     );
 };
 add_action('widgets_init','ashraf_widget_setup');
+
+// Include Walker Files
+require get_template_directory() . '/inc/walker.php';

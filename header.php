@@ -26,7 +26,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
-					      <a class="navbar-brand" href="#">Ashraf Theme</a>
+					      <a class="navbar-brand" href="">Ashraf Theme</a>
 					    </div>
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,7 +34,8 @@
 											wp_nav_menu(array(
 												'theme_location'=>'primary',
 												'container'=>false,
-												'menu_class' => 'nav navbar-nav navbar-right'
+												'menu_class' => 'nav navbar-nav navbar-right',
+												'walker' => new Walker_Nav_Primary()
 											)
 										);
 									?>

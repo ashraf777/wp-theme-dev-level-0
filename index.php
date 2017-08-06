@@ -6,9 +6,11 @@
 		<div class="row text-center no-margin">
 
   <?php
-	$q = new WP_Query( 'posts_per_page=10' );
-    if( $q->have_posts() ): $i = 0;
-      while( $q->have_posts() ) : $q->the_post(); ?>
+	$currentPage = (get_query_var('paged')) ? get_query_var('paged'): 1;
+	$q = array( 'posts_per_page' => 3, 'paged' => $currentPage );
+	query_posts($q);
+    if( have_posts() ): $i = 0;
+      while( have_posts() ) : the_post(); ?>
         <?php if( $i == 0 ): $column = 12;
 							elseif( $i > 0 && $i <= 2 ): $column = 6; $class = ' second-row-padding';
 							else:	$column = 4; $class= ' third-row-padding';
@@ -26,8 +28,16 @@
 						</div>
 					</div>
 
-    <?php $i++; endwhile;
-        endif;
+    <?php $i++; endwhile; ?>
+
+			<div class="col-xs-6 text-left">
+					<?php next_posts_link('= Older Posts'); ?>
+			</div>
+			<div class="col-xs-6 text-right">
+					<?php previous_posts_link('Newer Posts ='); ?>
+			</div>
+
+        <?php endif;
     ?>
 		</div>
 		<hr>
