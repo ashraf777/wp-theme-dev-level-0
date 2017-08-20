@@ -6,3 +6,23 @@
 .blog-element a { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
 .second-row-padding { padding-right: 0; padding-left: 0; }
 .third-row-padding { padding: 0;}
+
+/* header search box */
+.search-form-container { display: none; position: relative; }
+.container-fluid li:first-child a { font-size: 0; width: 30px; position: relative; }
+.container-fluid li:first-child:after {
+  display: block;
+  position: absolute;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: -0.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e003";
+  font-size: 20px;
+  top: 50%;
+  left: 0;
+  right: 0;
+}

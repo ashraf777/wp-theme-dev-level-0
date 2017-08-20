@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html <?php language_attributes(); ?>>
 	<head>
-		<meta charst="utf-8">
-		<title>Ashraf Theme</title>
+		<meta charset="<?php bloginfo('charset'); ?>">
+		<title><?php bloginfo('name'); ?> <?php wp_title(' | '); ?></title>
+		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<?php wp_head(); ?>
 	</head>
 	<?php
@@ -26,7 +27,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
-					      <a class="navbar-brand" href="">Ashraf Theme</a>
+					      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">Ashraf Theme</a>
 					    </div>
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,7 +40,7 @@
 											)
 										);
 									?>
-									<div class="navbar-form navbar-right">
+									<div class="navbar-form navbar-right search-form-container">
 											<div class="form-group">
 												<?php get_search_form(); ?>
 											</div>
